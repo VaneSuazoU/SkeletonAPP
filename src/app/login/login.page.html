@@ -1,13 +1,28 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Login</ion-title>
+    <ion-title>SkeletonAPP</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Login</ion-title>
+      <ion-title size="large">Iniciar Sesion</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-card-content>
+    <ion-item lines="full">
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input type="text " [(ngModel)]="user.usuario"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full" (click)="ingresar()">Ingresar</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-card-content>
 </ion-content>
