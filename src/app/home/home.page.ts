@@ -23,7 +23,6 @@ export class HomePage {
     this.route.queryParams.subscribe(params => {
       if (params && params['username']) { // Verifica que params y username existan
         this.username = params['username'];
-
       }
     });
   }

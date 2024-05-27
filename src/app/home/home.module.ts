@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
-import { HomePage } from './home.page';
-import { HomePageRoutingModule } from './home-routing.module';
+import { IonicModule } from '@ionic/angular';
 
-// Importa los módulos de Angular Material necesarios
+import { HomePageRoutingModule } from './home-routing.module';
+import { HomePage } from './home.page';
+
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -20,7 +20,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatFormFieldModule // Asegúrate de importar este módulo también si estás usando form fields
+    MatFormFieldModule // Asegúrate de tener esta línea
   ],
   declarations: [HomePage]
 })
