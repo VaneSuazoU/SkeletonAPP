@@ -20,7 +20,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatFormFieldModule // Asegúrate de tener esta línea
+    MatFormFieldModule
   ],
   declarations: [HomePage]
 })

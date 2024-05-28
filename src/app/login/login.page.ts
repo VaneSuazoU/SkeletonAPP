@@ -15,11 +15,15 @@ export class LoginPage {
   constructor(private router: Router) { }
 
   ingresar() {
-    const navigationExtras: NavigationExtras = {
-      state: {
-        user: this.user
-      }
-    };
-    this.router.navigate(['/home'], navigationExtras);
+    if (this.user.usuario.length >= 3 && this.user.usuario.length <= 8 && this.user.password.length === 4) {
+      const navigationExtras: NavigationExtras = {
+        state: {
+          user: this.user
+        }
+      };
+      this.router.navigate(['/home'], navigationExtras);
+    } else {
+      alert('Campos no son validos')    
+    }
   }
 }
