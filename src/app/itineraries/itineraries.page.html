@@ -13,5 +13,14 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <p>Estas en tus itinerarios</p>
+  <ion-list>
+    <ion-item *ngFor="let itinerary of itineraries" [routerLink]="['/trips', itinerary.id]" routerDirection="forward">
+      <ion-label>
+        <h2>{{ itinerary.name }}</h2>
+        <p>{{ itinerary.description }}</p>
+        <p>Fecha: {{ itinerary.date | date:'dd/MM/yyyy' }}</p>
+      </ion-label>
+      <ion-icon name="arrow-forward" slot="end"></ion-icon>
+    </ion-item>
+  </ion-list>
 </ion-content>
