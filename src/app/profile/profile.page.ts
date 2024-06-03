@@ -7,7 +7,7 @@ import { AlertController } from '@ionic/angular';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
-  styleUrls: ['./profile.page.scss'],
+  styleUrls: ['./profile.page.scss']
 })
 export class ProfilePage {
   data: any;
@@ -24,11 +24,11 @@ export class ProfilePage {
   ) {
     this.activeroute.queryParams.subscribe(params => {
       const navigation = this.router.getCurrentNavigation();
-      if (navigation && navigation.extras.state) {
+      if (navigation && navigation.extras && navigation.extras.state && navigation.extras.state['user']) {
         this.data = navigation.extras.state['user'];
         console.log(this.data);
       } else {
-        this.router.navigate(['/home']);
+        this.router.navigate(['/profile']);
       }
     });
   }

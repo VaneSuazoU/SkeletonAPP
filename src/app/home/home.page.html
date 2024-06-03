@@ -4,11 +4,21 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>TravelMate</ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/profile']" routerDirection="root">
+        <ion-icon name="person" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <h1>Bienvenido a TravelMate!</h1>
-  <p>Explora tu perfil.</p>
-  <ion-button routerLink="/profile">Mostrar</ion-button>
+  <p>Hola, {{ userData?.['usuario'] }}!</p>
+  <ion-button [routerLink]="['/itineraries']" routerDirection="root">
+    Ver Itinerarios
+  </ion-button>
+  <ion-button [routerLink]="['/destinations']" routerDirection="root">
+    Ver Destinos
+  </ion-button>
 </ion-content>

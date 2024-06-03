@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -17,8 +17,10 @@ export class AppComponent {
   ];
 
   constructor(private router: Router) {
-    this.router.events.subscribe(() => {
-      this.selectedPath = this.router.url;
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.selectedPath = this.router.url;
+      }
     });
   }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +23,7 @@ export class LoginPage {
       };
       this.router.navigate(['/home'], navigationExtras);
     } else {
-      alert('Campos no son validos')    
+      alert('Campos no son validos');
     }
   }
 }

@@ -1,13 +1,17 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>itineraries</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Itinerarios</ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/profile']" routerDirection="root">
+        <ion-icon name="person" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">itineraries</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <p>Estas en tus itinerarios</p>
 </ion-content>
