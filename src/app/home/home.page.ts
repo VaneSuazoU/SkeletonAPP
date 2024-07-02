@@ -8,6 +8,7 @@ import { ActivatedRoute, Router, NavigationExtras, NavigationEnd } from '@angula
 })
 export class HomePage {
   userData: any;
+  selectedComponent = 'personaldata';
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router) {
     this.router.events.subscribe(event => {
@@ -26,5 +27,14 @@ export class HomePage {
       }
     };
     this.router.navigate(['/profile'], navigationExtras);
+  }
+
+  logout() {
+    localStorage.clear();
+    this.router.navigate(['/login']);
+  }
+
+  segmentChanged(event: any) {
+    this.selectedComponent = event.detail.value;
   }
 }

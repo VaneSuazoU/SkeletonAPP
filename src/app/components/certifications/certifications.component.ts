@@ -5,10 +5,15 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './certifications.component.html',
   styleUrls: ['./certifications.component.scss'],
 })
-export class CertificationsComponent  implements OnInit {
+export class CertificationsComponent implements OnInit {
+  certificationName: string = '';
+  obtainedDate: string = '';
+  hasExpiration: boolean = false;
+  expirationDate: string = '';
 
   constructor() { }
 
-  ngOnInit() {}
-
+  ngOnInit() {
+    console.log('Hola')
+  }
 }

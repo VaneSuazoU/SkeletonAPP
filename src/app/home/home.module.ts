@@ -11,6 +11,10 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
+import { PersonaldataComponent } from '../components/personaldata/personaldata.component';
+import { ExperienceComponent } from '../components/experience/experience.component';
+import { CertificationsComponent } from '../components/certifications/certifications.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -22,6 +26,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatNativeDateModule,
     MatFormFieldModule
   ],
-  declarations: [HomePage]
+  declarations: [
+    HomePage,
+    PersonaldataComponent,
+    ExperienceComponent,
+    CertificationsComponent
+  ]
 })
 export class HomePageModule {}

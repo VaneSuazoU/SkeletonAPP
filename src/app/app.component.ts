@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
+import { DatabaseService } from './services/database.service';
 
 @Component({
   selector: 'app-root',
@@ -16,11 +17,25 @@ export class AppComponent {
     { title: 'Destinos', url: '/destinations', icon: 'location' },
   ];
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private databaseService: DatabaseService
+  ) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         this.selectedPath = this.router.url;
       }
     });
+
+    this.initializeApp();
+  }
+
+  async initializeApp() {
+    try {
+      await this.databaseService.initializeDatabase();
+      console.log('Base de datos inicializada correctamente desde AppComponent');
+    } catch (error) {
+      console.error('Error al inicializar la base de datos:', error);
+    }
   }
 }
